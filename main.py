@@ -13,7 +13,7 @@ app = Flask(__name__)
 # the App Engine WSGI application server.
 
 
-@app.route('/index',methods=['GET'])
+@app.route('/',methods=['GET'])
 def index():
      return render_template('index.html')
 
@@ -21,10 +21,7 @@ def index():
 
 
 
-@app.route('/')
-def hello():
-    """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+
 
 
 
