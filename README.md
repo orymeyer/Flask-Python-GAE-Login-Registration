@@ -1,20 +1,15 @@
-## Python Flask Skeleton for Google App Engine
+## Flask-Python-GAE-Login-Registration
 
-A skeleton for building Python applications on Google App Engine with the
-[Flask micro framework](http://flask.pocoo.org).
 
-See our other [Google Cloud Platform github
-repos](https://github.com/GoogleCloudPlatform) for sample applications and
-scaffolding for other python frameworks and use cases.
 
-## Run Locally
+# Run Locally
 1. Install the [App Engine Python SDK](https://developers.google.com/appengine/downloads).
 See the README file for directions. You'll need python 2.7 and [pip 1.4 or later](http://www.pip-installer.org/en/latest/installing.html) installed too.
 
 2. Clone this repo with
 
    ```
-   git clone https://github.com/GoogleCloudPlatform/appengine-python-flask-skeleton.git
+   git clone https://github.com/orymeyer/Flask-Python-GAE-Login-Registration.git
    ```
 3. Install dependencies in the project's lib directory.
    Note: App Engine can only import libraries from inside your project directory.
@@ -69,11 +64,4 @@ the SDK, only pure python libraries may be added to an App Engine project.
 Star this repo if you found it useful. Use the github issue tracker to give
 feedback on this repo.
 
-## Contributing changes
-See [CONTRIB.md](CONTRIB.md)
 
-## Licensing
-See [LICENSE](LICENSE)
-
-## Author
-Logan Henriquez and Johan Euphrosine
