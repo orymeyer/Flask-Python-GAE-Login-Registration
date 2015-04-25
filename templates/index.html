@@ -49,7 +49,7 @@
 				</div>
 				<div class="col-md-8 column">
 					<h1 class="text-center" style="color:white">
-						Dead Mans Switch
+						LOGIN / REGISTER
 					</h1>
 					<div class="page-header">
 						<h1>
@@ -80,7 +80,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="/login" name="loginform" method="post" role="form" style="display: block;">
+								<form id="login-form" action="javascript:login();" name="loginform" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
@@ -139,6 +139,46 @@
 </div>
 </body>
     <script type="text/javascript">
+
+function login(){
+
+$.post("/login",
+    {
+        username: $('#login-form #username').val().toString(),
+        password: $('#login-form #password').val().toString()
+
+
+    },function(data){
+    console.log(data["status"])
+    if(data["status"]==true)
+    {
+     swal({
+                      title: "Success!",
+                      text: "You are now logged In!",
+                      type: "success"})
+
+
+
+    }
+    else
+    {
+    swal({
+                      title: "Oops!",
+                      text: "Wrong credentials",
+                      type: "error"})
+
+
+
+    }
+
+    });
+
+
+
+}
+
+
+
     function findUser()
 {
     $.post("checkUser",
@@ -169,7 +209,7 @@
 function Register(){
    document.registerform.action = "addUser";
    document.registerform.submit();
-   //swal("Good job!", "You have logged in Successfully!", "success")
+   //swal("Good job!", "You have Registered Successfully!", "success")
     }
 
  */       

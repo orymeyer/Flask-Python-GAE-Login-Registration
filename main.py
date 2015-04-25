@@ -12,6 +12,10 @@ app = Flask(__name__)
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
 
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+
+
+
 
 @app.route('/',methods=['GET'])
 def index():
@@ -45,9 +49,17 @@ def getUsers():
 
 @app.route('/login',methods=['POST'])
 def login():
-    name = request.form["username"]
-    password = request.form["password"]
-    
+    if 'loggedin' in session:
+        return jsonify({"status":True})
+
+    name = str(request.form["username"])
+    password = str(request.form["password"])
+    status=checkLogin(name,password)
+
+    if status==True:
+        session["loggedin"]=True
+    return jsonify(status=status)
+
 
 
 @app.route('/checkUser',methods=['POST'])

@@ -47,12 +47,15 @@ def checkUserPresence(_name):
         return True 
     
 def checkLogin(_name,_pass):
-    qry = user.query()
-    qry.filter(user.name == _name)
-    res = qry.fetch(1)
+    print _name
+    qry = user.query(user.name == _name)
 
-    
-    if str(res[0].password) == str(_pass):
+    res = qry.fetch(1)
+    print res
+    if len(res)==0:
+        return False
+
+    elif str(res[0].password) == str(_pass):
         return True
     else:
         return False 
